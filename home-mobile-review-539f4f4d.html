@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 · 运动生活指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce9d4 0%, #f7d7b0 45%, #edc49b 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 1.2rem 3rem;
+            line-height: 1.65;
+            color: #2d2a26;
+        }
+        .magazine {
+            max-width: 860px;
+            width: 100%;
+            background: rgba(255, 252, 245, 0.85);
+            backdrop-filter: blur(4px);
+            border-radius: 36px;
+            box-shadow: 0 12px 40px rgba(140, 90, 50, 0.18);
+            padding: 2.4rem 2rem 2.8rem;
+            transition: all 0.15s ease;
+            border: 1px solid rgba(255, 245, 220, 0.7);
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 2.6rem;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #4f3724;
+            background: linear-gradient(to right, #7b5e3d, #b2804b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            background: rgba(200, 160, 120, 0.2);
+            display: inline-block;
+            padding: 0.25rem 1.6rem;
+            border-radius: 60px;
+            color: #5a4030;
+            font-weight: 450;
+            backdrop-filter: blur(2px);
+        }
+        .intro-block {
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 6px 12px rgba(100, 70, 40, 0.06);
+            border: 1px solid #f9eee3;
+        }
+        .intro-block p {
+            margin-bottom: 1rem;
+        }
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+        .highlight-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2rem 0 2.2rem;
+        }
+        .card-item {
+            flex: 1 1 180px;
+            background: white;
+            border-radius: 24px;
+            padding: 1.3rem 1.2rem 1.4rem;
+            box-shadow: 0 4px 18px rgba(140, 100, 60, 0.08);
+            border: 1px solid #f5dfcc;
+            transition: 0.1s ease;
+        }
+        .card-item:hover {
+            background: #fffcf5;
+            border-color: #dbbc9b;
+            transform: scale(1.01);
+        }
+        .card-item h3 {
+            font-size: 1.15rem;
+            font-weight: 550;
+            color: #543e2c;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+        .card-item p {
+            font-size: 0.95rem;
+            color: #4a3d34;
+        }
+        .faq-mini {
+            background: #f5ede3;
+            border-radius: 26px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.8rem 0 2rem;
+            border-left: 4px solid #b98a60;
+        }
+        .faq-mini summary {
+            font-weight: 520;
+            color: #3c2e24;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            font-size: 1rem;
+        }
+        .faq-mini details p {
+            margin-top: 0.6rem;
+            color: #4e3d30;
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+        }
+        .cta-note {
+            text-align: center;
+            margin: 2.2rem 0 0.4rem;
+            padding: 1.2rem 1rem 0.8rem;
+            border-top: 1px solid #e6d3bf;
+        }
+        .cta-note p {
+            font-size: 1rem;
+            color: #3e322b;
+        }
+        .cta-note a {
+            display: inline-block;
+            background: #7f613e;
+            color: #fef6ed;
+            text-decoration: none;
+            padding: 0.4rem 1.8rem;
+            border-radius: 80px;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            margin: 0.6rem 0 0.2rem;
+            box-shadow: 0 3px 8px rgba(120, 80, 40, 0.15);
+            transition: 0.12s;
+            border: 1px solid #9a7a58;
+        }
+        .cta-note a:hover {
+            background: #96724d;
+            box-shadow: 0 5px 12px rgba(100, 68, 30, 0.2);
+            transform: scale(1.02);
+        }
+        .footer-note {
+            margin-top: 1.4rem;
+            font-size: 0.86rem;
+            color: #66564a;
+            text-align: center;
+            border-top: 1px dashed #dcc9b6;
+            padding-top: 1rem;
+        }
+        @media (max-width: 600px) {
+            .magazine {
+                padding: 1.6rem 1.2rem 2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .card-item {
+                flex: 1 1 100%;
+            }
+            .intro-block {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="magazine">
+    <div class="hero">
+        <h1>MK体育 · 运动生活</h1>
+        <div class="sub">简明指南 · 日常陪伴</div>
+    </div>
+
+    <div class="intro-block">
+        <p>对于许多刚开始接触运动资讯的朋友来说，信息太多反而让人不知道从哪看起。其实最直接的方法，就是定期看看自己感兴趣的项目动态——无论是赛事结果、训练思路还是装备推荐，保持一个轻松了解的节奏就好。</p>
+        <p>如果你平时习惯用手机浏览，可以试试把 <a href="https://home-mobile-mksports.com" style="color:#7f613e; text-decoration:underline; font-weight:500;">MK体育</a> 存成书签或添加到桌面。它本身就是针对移动端做过一些适配的页面，打开之后内容排布比较清晰，滑动阅读不会太累。页面结构简洁，没有太多弹窗干扰，适合安静地翻翻体育相关的内容。</p>
+    </div>
+
+    <div class="highlight-card">
+        <div class="card-item">
+            <h3>📋 日常信息流</h3>
+            <p>聚合多个运动方向的快讯与短文，方便你在碎片时间里了解动态，不需要频繁切换不同平台。</p>
+        </div>
+        <div class="card-item">
+            <h3>⚙️ 实用提醒</h3>
+            <p>页面不追踪多余信息，没有强制注册或复杂弹窗。打开即读，关闭即走，专注内容本身。</p>
+        </div>
+        <div class="card-item">
+            <h3>🌿 低打扰浏览</h3>
+            <p>没有自动播放的视频或闪烁广告，对移动端流量和阅读注意力都比较友好，可以放心使用。</p>
+        </div>
+    </div>
+
+    <div class="intro-block">
+        <p>在使用任何体育类网站时，养成几个小的习惯会让体验更好：比如留意网址是不是自己常去的那个，不随意授权位置或通知权限，以及尽量通过主流搜索引擎或已知入口进入。尤其在手机端，偶尔会碰到跳转异常或排版错乱的情况——这时候刷新一次或者清理一下浏览器缓存，往往就能恢复正常。</p>
+        <p>另外，有些朋友可能会遇到页面加载略微缓慢的现象。这通常和网络环境有关，建议优先使用 Wi-Fi 或者 4G/5G 信号稳定的场景。如果某个栏目暂时打不开，可以过几个小时再试试，体育资讯类站点偶尔会有短暂维护或数据刷新。</p>
+    </div>
+
+    <div class="faq-mini">
+        <details>
+            <summary>📌 快速了解：常见疑问摘要</summary>
+            <p>问：需要注册账号才能看吗？<br>答：不需要。网站上大部分内容直接可见，没有强制登录的要求。</p>
+            <p>问：手机阅读时字体太小怎么办？<br>答：可以通过手机浏览器自带的“页面缩放”功能调整，许多浏览器也支持“阅读模式”让排版更规整。</p>
+            <p>问：链接安全性如何？<br>答：建议只通过本文提到的地址 <a href="https://home-mobile-mksports.com" style="color:#7f613e; text-decoration:underline;">MK体育</a> 访问，不要点击来源不明的短链接或弹窗。</p>
+        </details>
+    </div>
+
+    <div class="cta-note">
+        <p>如果你想找一处安静且适合手机浏览的体育内容站点，不妨从这里开始：</p>
+        <a href="https://home-mobile-mksports.com">MK体育</a>
+        <p style="margin-top:0.8rem; font-size:0.9rem; color:#625144;">建议复制链接到浏览器地址栏，或长按识别二维码（若适用）</p>
+    </div>
+
+    <div class="footer-note">
+        本页仅为信息介绍 · 内容基于日常浏览经验整理 · 请合理分配阅读时间
+    </div>
+</div>
+</body>
+</html>

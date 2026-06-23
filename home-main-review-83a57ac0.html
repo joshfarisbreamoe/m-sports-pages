@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK体育 · 杂志专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #fafaf9;
+      color: #1c1917;
+      line-height: 1.7;
+      letter-spacing: 0.012em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ——— HERO 横幅 ——— */
+    .hero {
+      padding: 80px 0 56px;
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    .hero__label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a8a29e;
+      margin-bottom: 20px;
+    }
+
+    .hero__title {
+      font-size: 2.8rem;
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #292524;
+    }
+
+    .hero__title span {
+      display: inline-block;
+      background: #e7e5e4;
+      padding: 0 6px;
+      font-weight: 400;
+      color: #44403c;
+    }
+
+    .hero__sub {
+      margin-top: 20px;
+      font-size: 1.15rem;
+      color: #57534e;
+      max-width: 600px;
+    }
+
+    /* ——— 背景说明 ——— */
+    .background-note {
+      margin-top: 48px;
+      padding: 28px 0 32px;
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    .background-note h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #292524;
+      margin-bottom: 16px;
+    }
+
+    .background-note p {
+      color: #57534e;
+      margin-bottom: 14px;
+    }
+
+    .background-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .background-note em {
+      font-style: normal;
+      background: #f5f5f4;
+      padding: 0 4px;
+      color: #1c1917;
+    }
+
+    /* ——— 三段自然介绍（卡片式） ——— */
+    .features {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .feature-card {
+      padding: 24px 0 28px;
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    .feature-card:last-child {
+      border-bottom: none;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #292524;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-card p {
+      color: #57534e;
+      font-size: 0.98rem;
+    }
+
+    .feature-card .meta {
+      font-size: 0.75rem;
+      color: #a8a29e;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 10px;
+    }
+
+    /* ——— FAQ 摘要（极简） ——— */
+    .faq-mini {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid #e7e5e4;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #292524;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 18px;
+    }
+
+    .faq-item summary {
+      font-weight: 450;
+      color: #292524;
+      cursor: default;
+      list-style: none;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .faq-item summary::before {
+      content: "▹";
+      margin-right: 8px;
+      color: #a8a29e;
+      font-size: 0.9rem;
+    }
+
+    .faq-item p {
+      margin-top: 6px;
+      margin-left: 20px;
+      color: #57534e;
+      font-size: 0.95rem;
+    }
+
+    /* ——— 页尾提示 ——— */
+    .footer-note {
+      margin-top: 60px;
+      padding-top: 28px;
+      border-top: 1px solid #e7e5e4;
+      font-size: 0.9rem;
+      color: #78716c;
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .footer-note a {
+      color: #292524;
+      text-decoration: underline;
+      text-decoration-color: #d6d3d1;
+      text-underline-offset: 4px;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .footer-note a:hover {
+      text-decoration-color: #292524;
+    }
+
+    .footer-note .tag {
+      font-size: 0.75rem;
+      color: #a8a29e;
+      letter-spacing: 0.04em;
+    }
+
+    /* ——— 响应式 ——— */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 56px 0 40px;
+      }
+
+      .hero__title {
+        font-size: 2rem;
+      }
+
+      .hero__sub {
+        font-size: 1rem;
+      }
+
+      .page {
+        padding: 0 16px 60px;
+      }
+
+      .footer-note {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero__title {
+        font-size: 1.7rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HERO 横幅 -->
+    <header class="hero">
+      <div class="hero__label">杂志 · 专题</div>
+      <h1 class="hero__title">
+        从稳定入口<br>理解 <span>MK体育</span>
+      </h1>
+      <p class="hero__sub">
+        一份关于入口逻辑、页面结构与信息场景的观察笔记。
+      </p>
+    </header>
+
+    <!-- 背景说明 -->
+    <section class="background-note">
+      <h2>为什么需要稳定的入口</h2>
+      <p>
+        在信息密度不断攀升的网络环境中，一个清晰、可预期的访问路径本身就是产品信任的一部分。
+        <em>MK体育</em> 的首页设计遵循了「少干扰、直达内容」的原则——没有冗余弹窗与过度动效，页面结构服务于信息检索的效率。
+      </p>
+      <p>
+        这种克制并非功能上的简陋，而是对用户注意力的尊重。当访问者通过
+        <a href="https://home-main-mksports.com" style="color:#292524; text-decoration: underline; text-decoration-color: #d6d3d1; text-underline-offset: 4px;">MK体育</a>
+        进入首页，第一眼看到的应当是内容的骨架，而非视觉的噪音。
+      </p>
+    </section>
+
+    <!-- 三段自然介绍（特点·场景·连续性） -->
+    <div class="features">
+      <article class="feature-card">
+        <h3>信息构图：从标题到正文的节奏</h3>
+        <p>
+          首页采用清晰的层级划分：主标题承担品牌认知，副标题提供场景提示，而正文区域则按模块组织。每一段文字之间有自然的留白，不堆叠、不催促，让阅读成为一种自主的探索。
+        </p>
+        <div class="meta">结构 · 节奏</div>
+      </article>
+
+      <article class="feature-card">
+        <h3>页面语言：克制的视觉与开放的路径</h3>
+        <p>
+          配色取自大地色系，降低视觉疲劳；正文字号与行距经过调整，保证在手机与桌面设备上的可读性。所有链接均以低调的下划线呈现，不争夺注意力，却随时提供延伸的入口——比如再次回到
+          <a href="https://home-main-mksports.com" style="color:#292524; text-decoration: underline; text-decoration-color: #d6d3d1; text-underline-offset: 4px;">MK体育</a>
+          首页，或者继续阅读当前专题。
+        </p>
+        <div class="meta">视觉 · 路径</div>
+      </article>
+
+      <article class="feature-card">
+        <h3>场景适配：从碎片阅读到深度浏览</h3>
+        <p>
+          专题页的设计兼顾了两种常见场景：快速扫读（通过小标题与摘要定位信息）与沉浸阅读（通过窄栏宽与连续段落实现）。无论用户带着明确目的还是随意浏览，页面都能提供恰好的支持。
+        </p>
+        <div class="meta">场景 · 适配</div>
+      </article>
+    </div>
+
+    <!-- FAQ 摘要（极简） -->
+    <section class="faq-mini">
+      <h2>常见理解 · 摘要</h2>
+      <div class="faq-item">
+        <summary>MK体育 的页面主要面向哪些访问者？</summary>
+        <p>面向体育信息关注者、行业观察者以及需要稳定访问路径的日常用户。页面内容以中文为主，结构通用。</p>
+      </div>
+      <div class="faq-item">
+        <summary>首页是否包含动态加载或第三方脚本？</summary>
+        <p>首页以静态内容为主，强调快速呈现与低依赖。外部链接仅用于扩展阅读，不强制加载额外资源。</p>
+      </div>
+    </section>
+
+    <!-- 页尾提示 -->
+    <footer class="footer-note">
+      <span>杂志专题 · 入口说明</span>
+      <span>
+        <a href="https://home-main-mksports.com">MK体育</a>
+        <span class="tag"> · 稳定入口</span>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
